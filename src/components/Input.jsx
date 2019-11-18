@@ -1,4 +1,5 @@
 import React from 'react';
+import * as Require from '../lib/validations';
 class Input extends React.Component {
 
     state = {
@@ -6,13 +7,12 @@ class Input extends React.Component {
     }
 
     handleChange(event){
-        console.log(event.target.name,event.target.value);
+        // console.log(event.target.name,event.target.value);
         const{
             onChange
         } = this.props
 
-        // Validation code here
-
+       console.log(Require["require"](event.target.value));
         onChange(event);
     }
 
