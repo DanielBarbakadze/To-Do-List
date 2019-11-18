@@ -20,3 +20,21 @@
 .App-link {
   color: #09d3ac;
 }
+
+.modeContainer{
+display:flex;
+justify-content: flex-end;
+}
+.modeButton{
+margin-right: 1%;
+border-radius: 50px;
+width:7%;
+height: 40px;
+font-size: 14px;
+}
+.loginBox{
+  text-align: center;
+  font-size: 40px;
+  margin-top: 7%;
+  border: 1px solid black;
+}
