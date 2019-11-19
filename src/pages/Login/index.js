@@ -2,6 +2,7 @@ import React from 'react';
 import Form from '../../components/Form';
 import Require from '../../lib/validations';
 import Main from '../Main';
+import { withRouter } from "react-router";
 
 import {
   BrowserRouter as Router,
@@ -11,7 +12,7 @@ import {
 } from "react-router-dom";
 import { Redirect } from 'react-router';
 
-export default class Login extends React.Component {
+class Login extends React.Component {
 
   handleOnSubmit(state) {
   
@@ -28,7 +29,7 @@ export default class Login extends React.Component {
 
     if(state['username']!=='' && state['password']!=='' && state['username'] != undefined && state['password'] != undefined) {
       if(givenPerson1['username']===state['username'] && givenPerson1['password']===state['password']){
-         window.location.assign("/Main");
+        this.props.history.push('/Main');
       }
     }
   
@@ -57,3 +58,5 @@ render(){
     )}
  
 }
+
+export default withRouter(Login);
