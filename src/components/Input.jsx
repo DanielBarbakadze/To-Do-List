@@ -3,7 +3,7 @@ import * as Require from '../lib/validations';
 class Input extends React.Component {
 
     state = {
-        errors: ""
+        errors: []
     }
 
     handleChange(event){
@@ -12,12 +12,7 @@ class Input extends React.Component {
             onChange
         } = this.props
 
-       if(!Require["require"](event.target.value)){
-           this.setState({errors:"Please Input"});
-       }
-       else{
-           this.setState({errors:""});
-       }
+       console.log(Require["require"](event.target.value));
         onChange(event);
     }
 
@@ -36,9 +31,6 @@ class Input extends React.Component {
                 value={value ? value : ''}
                 type={type}
             />
-            <div>
-               {this.state.errors}
-            </div>
             </div>
 
         )
