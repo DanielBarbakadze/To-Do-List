@@ -34,21 +34,23 @@ class Input extends React.Component {
             value,
             style,
             type='text',
-            errors
+            errors,
+            placeholder
         } = this.props;
 
         console.log(errors);
 
         return (
             <div>
-            <input
+            <input 
                 name={name}
                 onChange={(event) => this.handleChange(event)}
                 value={value ? value : ''}
                 type={type}
                 style={style}
+                placeholder={placeholder}
             />
-            <div>
+            <div className="error_text">
                {errors}
             </div>
             </div>

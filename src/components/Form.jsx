@@ -48,17 +48,18 @@ export default class Form extends React.Component {
                 {
                     this.props.inputs.map((input) => {
                         return (
-                            <Input
+                            <Input 
                                 name={input.name}
                                 value={this.state[input.name] && this.state[input.name].value}
                                 style={input.style}
                                 errors={this.state.submitted ? this.state[input.name].errors : ''}
                                 onChange={(e,errors) => this.handleChange(e, errors)}
                                 validations={input.validations}
+                                placeholder={input.placeholder}
                             />
                         )
                     })}
-                <button onClick={() => this.handleClick()}>Sumbit</button>
+                <button onClick={() => this.handleClick()}>login</button>
             </div>
         )
     }
