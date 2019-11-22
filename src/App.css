@@ -1,8 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 body {
+  background-image: url("/bg.jpg");
   background-size: cover;
-  background-image: url("https://cdn.dribbble.com/users/2168231/screenshots/8301771/media/3b7da0b76f6f27ecf62fa709aef8b1c1.jpg");
 }
 
 .login-page {
