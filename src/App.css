@@ -1,22 +1,78 @@
-.App {
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+body {
+  background-size: cover;
+  background-image: url("https://cdn.dribbble.com/users/2168231/screenshots/8301771/media/3b7da0b76f6f27ecf62fa709aef8b1c1.jpg");
+}
+
+.login-page {
+  width: 40%;
+  padding: 5% 0 0;
+  margin: auto;
+}
+.form {
+  position: relative;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.95);
+  max-width: 400px;
+  margin: 0 auto 100px;
+  padding: 23px 45px 30px 45px;
   text-align: center;
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px
+}
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #dddddd;
+  width: 100%;
+  border: 0;
+  margin: 0 0 20px;
+  padding: 18px;
+  box-sizing: border-box;
+  font-size: 14px;
+  border-radius: 3px
+}
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #0984e3;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  border-radius: 3px
+}
+.form button:hover,.form button:focus {
+  background: #0476ce;
 }
 
-.App-logo {
-  height: 40vmin;
+.form button:active {
+  background: #1084dd;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 0.95em;
+  font-weight: bold;
+}
+.form .message a {
+  color: #0476ce;
+  font-size: 1em;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
-.App-link {
-  color: #09d3ac;
+.form-text {
+  font-size: 1.8em;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  padding-bottom: 20px;
 }

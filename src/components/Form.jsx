@@ -17,15 +17,16 @@ export default class Form extends React.Component {
                 {
                     this.props.inputs.map((input) => {
                         return (
-                            <Input
+                            <Input 
                                 name={input.name}
                                 value={this.state[input.name]}
                                 style={input.style}
                                 onChange={(e) => this.handleChange(e)}
+                                placeholder={input.placeholder}
                             />
                         )
                     })}
-                <button onClick={() => this.props.onSubmit(this.state)}>Sumbit</button>
+                <button onClick={() => this.props.onSubmit(this.state)}>login</button>
             </div>
         )
     }

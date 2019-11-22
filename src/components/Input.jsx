@@ -26,17 +26,19 @@ class Input extends React.Component {
             name,
             value,
             style,
+            placeholder,
             type='text'
         } = this.props;
 
         return (
             <div>
-            <input
+            <input 
                 name={name}
                 onChange={(event) => this.handleChange(event)}
                 value={value ? value : ''}
                 type={type}
                 style={style}
+                placeholder={placeholder}
             />
             <div>
                {this.state.errors}

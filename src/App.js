@@ -12,7 +12,7 @@ function App() {
   return (
     <Router>
       <div>
-        <nav>
+        {/* <nav>
           <ul>
             <li>
               <Link to="/Login">Login</Link>
@@ -24,7 +24,7 @@ function App() {
               <Link to="/Main">Main</Link>
             </li>
           </ul>
-        </nav>
+        </nav> */}
 
         <Switch>
 

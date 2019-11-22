@@ -22,7 +22,7 @@ class Login extends React.Component {
       username:"iva",
       password:"123"
     };
-
+    
     localStorage.setItem('person1',JSON.stringify(person1))
 
     let givenPerson1 = JSON.parse(localStorage.getItem('person1'));
@@ -37,23 +37,52 @@ class Login extends React.Component {
 
 render(){
     return (
-      <Form 
+      <div className="login-page">
+
+      <div className="form">
+
+            <div className="form-text">
+            <label>Authorization</label>
+            </div>
+
+        <form className="login-form" >
+
+        <Form 
       inputs={[
         {
           name: 'username',
           validations: [],
-          style: {color:'red'},
-          type: 'text'
+          style:{ 
+            'font-family': '"Roboto", sans-serif',
+            'outline': '0',
+            'background': '#dddddd',
+            'width': '100%',
+            'border': '0',
+            'margin': '0 0 20px',
+            'padding': '18px',
+            'box-sizing': 'border-box',
+            'font-size': '14px',
+            'border-radius': '3px'
+          },
+          type: 'text',
+          placeholder: 'Enter Username'
         },
         {
           name: 'password',
           validations: [],
           style: {},
-          type: 'text'
+          type: 'text',
+          placeholder: 'Enter Password'
         }
       ]}
       onSubmit={(state) => this.handleOnSubmit(state)}
     />
+          <p className="message">Not registered? <Link to="/Registration">Register Blyat!</Link></p>
+
+        </form>
+      </div>
+    </div>
+      
     
     )}
  
