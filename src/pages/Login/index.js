@@ -23,13 +23,16 @@ class Login extends React.Component {
       username: "iva",
       password: "123"
     };
+    console.log(state, 'hello2');
 
     localStorage.setItem('person1', JSON.stringify(person1))
 
     let givenPerson1 = JSON.parse(localStorage.getItem('person1'));
 
-    if (state['username'] !== '' && state['password'] !== '' && state['username'] != undefined && state['password'] != undefined) {
-      if (givenPerson1['username'] === state['username'] && givenPerson1['password'] === state['password']) {
+    console.log(givenPerson1)
+
+    if (state['username'].value !== '' && state['password'].value !== '' && state['username'].value != undefined && state['password'].value != undefined) {
+      if (givenPerson1['username'] === state['username'].value && givenPerson1['password'] === state['password'].value) {
         this.props.history.push('/Main');
       }
     }

@@ -38,6 +38,7 @@ export default class Form extends React.Component {
         this.setState({
             submitted: true
         })
+        
         this.props.onSubmit(this.state);
     }
 
