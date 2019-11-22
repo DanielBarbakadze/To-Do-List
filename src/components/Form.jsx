@@ -20,6 +20,7 @@ export default class Form extends React.Component {
                             <Input
                                 name={input.name}
                                 value={this.state[input.name]}
+                                style={input.style}
                                 onChange={(e) => this.handleChange(e)}
                             />
                         )

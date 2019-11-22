@@ -25,6 +25,7 @@ class Input extends React.Component {
         const {
             name,
             value,
+            style,
             type='text'
         } = this.props;
 
@@ -35,6 +36,7 @@ class Input extends React.Component {
                 onChange={(event) => this.handleChange(event)}
                 value={value ? value : ''}
                 type={type}
+                style={style}
             />
             <div>
                {this.state.errors}

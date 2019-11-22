@@ -15,7 +15,7 @@ import { Redirect } from 'react-router';
 class Login extends React.Component {
 
   handleOnSubmit(state) {
-  
+
     // Temp User 
     let person1 =
     {
@@ -42,7 +42,7 @@ render(){
         {
           name: 'username',
           validations: [],
-          style: {},
+          style: {color:'red'},
           type: 'text'
         },
         {
