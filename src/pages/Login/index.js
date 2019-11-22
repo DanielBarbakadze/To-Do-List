@@ -2,6 +2,7 @@ import React from 'react';
 import Form from '../../components/Form';
 import Require from '../../lib/validations';
 import Main from '../Main';
+import Input from '../../components/Input';
 import { withRouter } from "react-router";
 
 import {
@@ -41,13 +42,13 @@ render(){
       inputs={[
         {
           name: 'username',
-          validations: [],
+          validations: ['require'],
           style: {color:'red'},
           type: 'text'
         },
         {
           name: 'password',
-          validations: [],
+          validations: ['require'],
           style: {},
           type: 'text'
         }

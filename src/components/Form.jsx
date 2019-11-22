@@ -3,15 +3,46 @@ import React from 'react';
 
 
 export default class Form extends React.Component {
-    state = {}
+    state = {
+        submitted: false
+    }
 
-    handleChange(e) {
-        this.setState({
-            [e.target.name]: e.target.value
+    componentDidMount () {
+        this.props.inputs.forEach((input) => {
+            let errors = "";
+
+            if (input.validations.indexOf('require') >= 0) {
+                errors = "Please Input"
+            }
+
+            this.setState({
+                [input.name]: {
+                    value: '',
+                    errors
+                }
+            })
         })
     }
 
+    handleChange(e, errors) {
+        console.log(errors);
+        this.setState({
+            [e.target.name]: {
+                value: e.target.value,
+                errors
+            }
+        })
+    }
+
+    handleClick () {
+        this.setState({
+            submitted: true
+        })
+        this.props.onSubmit(this.state);
+    }
+
     render() {
+        console.log(this.state);
         return (
             <div>
                 {
@@ -19,13 +50,15 @@ export default class Form extends React.Component {
                         return (
                             <Input
                                 name={input.name}
-                                value={this.state[input.name]}
+                                value={this.state[input.name] && this.state[input.name].value}
                                 style={input.style}
-                                onChange={(e) => this.handleChange(e)}
+                                errors={this.state.submitted ? this.state[input.name].errors : ''}
+                                onChange={(e,errors) => this.handleChange(e, errors)}
+                                validations={input.validations}
                             />
                         )
                     })}
-                <button onClick={() => this.props.onSubmit(this.state)}>Sumbit</button>
+                <button onClick={() => this.handleClick()}>Sumbit</button>
             </div>
         )
     }

@@ -6,19 +6,26 @@ class Input extends React.Component {
         errors: ""
     }
 
+    that = this;
     handleChange(event){
         // console.log(event.target.name,event.target.value);
         const{
-            onChange
+            onChange,
+            validations
         } = this.props
+        let errors = "";
 
-       if(!Require["require"](event.target.value)){
-           this.setState({errors:"Please Input"});
-       }
-       else{
-           this.setState({errors:""});
-       }
-        onChange(event);
+        validations.map((validationName) => {
+            if(!Require[validationName](event.target.value)){
+                errors = "Please Input";
+                this.setState({errors});
+            }
+            else{
+                this.setState({errors})
+            }
+        });
+ 
+        onChange(event, errors);
     }
 
     render () {
@@ -26,8 +33,11 @@ class Input extends React.Component {
             name,
             value,
             style,
-            type='text'
+            type='text',
+            errors
         } = this.props;
+
+        console.log(errors);
 
         return (
             <div>
@@ -39,7 +49,7 @@ class Input extends React.Component {
                 style={style}
             />
             <div>
-               {this.state.errors}
+               {errors}
             </div>
             </div>
 
