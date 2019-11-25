@@ -78,11 +78,11 @@ body {
 }
 
 .error-text {
+  font-family: "Roboto", sans-serif;
   color: red;
   text-align: left;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: bold;
-  font-style: italic;
   position: relative;
   top: -16px;
 }
