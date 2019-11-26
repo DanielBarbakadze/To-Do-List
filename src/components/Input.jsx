@@ -38,7 +38,7 @@ class Input extends React.Component {
             placeholder
         } = this.props;
 
-        console.log(errors);
+        // console.log(errors);
 
         return (
             <div>
