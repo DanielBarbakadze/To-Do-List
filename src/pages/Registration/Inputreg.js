@@ -12,17 +12,21 @@ import {
         props.onChange(e);
 
     }
-    
+    function changePlaceHolder(name){
+      if(name==="confirm password") return("Confirm password");
+      else return("Enter " + name);
+    }
     return(
-      <div>
+       <div>
         <input 
-          name = {props.name} 
-          type = {props.type}
-          placeholder ={props.name}
-          className = {props.name}
-          onChange ={((e) => handleChange(e))}
-        />
-      </div>
+        name = {props.name} 
+        type = {props.type}
+        placeholder ={changePlaceHolder(props.name)}
+        className = {props.name}
+        onChange ={((e) => handleChange(e))}
+         />
+        </div>
+
     )
 }
 
