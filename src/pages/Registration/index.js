@@ -1,5 +1,6 @@
 import React from 'react';
 import FormsReg from './Formsreg';
+
 export default function Registration() {
   return (
     <div>
@@ -47,8 +48,7 @@ export default function Registration() {
 
         ]}
       />
-      <p className="message">Registered? <Link to="/">
-        Login Jigaro!</Link></p>
+      
     </div>
   )
 }

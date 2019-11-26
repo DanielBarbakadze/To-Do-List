@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import * as Validation from '../../lib/validations';
 import InputReg from './Inputreg';
 
+import {
+    Link,
+  } from "react-router-dom";
 let styles = {
   color: "purple",
   display: "inline",
@@ -13,7 +16,7 @@ class FormsReg extends React.Component {
     submitted: false
   }
   handleChange(e, vals) {
-      
+
     let errors;
     if (e.target.name === "password") {
       this.setState({ oldpassword: e.target.value });
@@ -65,7 +68,9 @@ class FormsReg extends React.Component {
             <div className ="error-text">{this.state[item.name + "check"]}</div>
           </div>
         )}
-        <button > Click me</button>
+        <button > Register </button>
+        <p className="message">Registered? <Link to="/">
+        Login Jigaro!</Link></p>
         {/* {console.log(this.state.submitted)} */}
         </form>
         </div>
