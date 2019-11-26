@@ -16,17 +16,26 @@ class FormsReg extends React.Component {
     submitted: false
   }
   handleChange(e, vals) {
-
     let errors;
     if (e.target.name === "password") {
       this.setState({ oldpassword: e.target.value });
       if (this.state.newpassword !== undefined) {
         if (this.state.newpassword !== e.target.value) { errors = "passwords don't match"; }
+        else {
+          this.setState({["passwordcheck"]: "" });
+          this.setState({["confirm passwordcheck"]: "" });
+        errors = "";
+        }
       }
     }
     if (e.target.name === "confirm password") {
       this.setState({ newpassword: e.target.value });
       if (e.target.value !== this.state.oldpassword) { errors = "passwords don't match"; }
+      else {
+        this.setState({["confirm passwordcheck"]: "" });
+        this.setState({["passwordcheck"]: "" });
+      errors = "";
+      }
     }
 
     if (e.target.name !== "confirm password") {
