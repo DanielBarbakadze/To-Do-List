@@ -50,7 +50,7 @@ class Input extends React.Component {
                 style={style}
                 placeholder={placeholder}
             />
-            <div className="error_text">
+            <div className="error-text">
                {errors}
             </div>
             </div>

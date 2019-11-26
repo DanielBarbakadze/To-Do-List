@@ -47,6 +47,8 @@ export default function Registration() {
 
         ]}
       />
+      <p className="message">Registered? <Link to="/">
+        Login Jigaro!</Link></p>
     </div>
   )
 }

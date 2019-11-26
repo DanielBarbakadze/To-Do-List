@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 body {
-  background-image: url("https://files.slack.com/files-pri/TNWALJ5DG-FR1D4R25D/bg.jpg");
+  background-image: url("/bg.jpg");
   background-size: cover;
 }
 

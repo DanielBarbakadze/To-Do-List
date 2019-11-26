@@ -83,7 +83,7 @@ class Login extends React.Component {
               ]}
               onSubmit={(state) => this.handleOnSubmit(state)}
             />
-            <p className="message">Not registered? <Link to="/Registration">Register Blyat!</Link></p>
+            <p className="message">Not registered? <Link to="/Registration">Register Jigaro!</Link></p>
 
           </div>
         </div>
