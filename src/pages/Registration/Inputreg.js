@@ -15,7 +15,6 @@ function InputReg(props){
     }
     return(
        <div>
-
         <input 
         name = {props.name} 
         type = {props.type}
