@@ -12,20 +12,7 @@ function App() {
   return (
     <Router>
       <div>
-        {/* <nav>
-          <ul>
-            <li>
-              <Link to="/Login">Login</Link>
-            </li>
-            <li>
-              <Link to="/Registration">Registration</Link>
-            </li>
-            <li>
-              <Link to="/Main">Main</Link>
-            </li>
-          </ul>
-        </nav> */}
-
+        
         <Switch>
 
           <Route path="/Login">
