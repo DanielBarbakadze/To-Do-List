@@ -4,7 +4,6 @@ import FormsReg from './Formsreg';
 export default function Registration() {
   return (
     <div>
-      <br></br>
       <FormsReg
         input={[
           {
