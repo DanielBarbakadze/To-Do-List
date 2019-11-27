@@ -15,13 +15,30 @@ import { Redirect } from 'react-router';
 
 class Login extends React.Component {
 
+
+  state = ({
+    errorMessage: ''
+  })
+
   handleOnSubmit(state) {
 
     let givenPerson1 = JSON.parse(localStorage.getItem(state['username'].value));
 
-    if (state['username'].value !== '' && state['password'].value !== '' && state['username'].value != undefined && state['password'].value != undefined) {
-      if (givenPerson1['username'] === state['username'].value && givenPerson1['password'] === state['password'].value) {
-        this.props.history.push('/Main');
+    if(givenPerson1==null){
+      this.setState({
+        errorMessage: 'Invalid Username or Password'
+      })  
+    }
+    else{
+      if (state['username'].value !== '' && state['password'].value !== '' && state['username'].value != undefined && state['password'].value != undefined) {
+        if (givenPerson1['username'] === state['username'].value && givenPerson1['password'] === state['password'].value) {
+          this.props.history.push('/Main');
+        }
+        else{
+          this.setState({
+            errorMessage: 'Invalid Username or Password'
+          })  
+        }
       }
     }
 
@@ -71,6 +88,7 @@ class Login extends React.Component {
               ]}
               onSubmit={(state) => this.handleOnSubmit(state)}
             />
+            <p style={{color: 'red'}}>{this.state.errorMessage}</p>
             <p className="message">Not registered? <Link to="/Registration">Register Jigaro!</Link></p>
 
           </div>
