@@ -10,7 +10,6 @@ export default function Registration() {
           {
             name: "username",
             type: "text",
-            id: "13",
             validation: ["usernameValidation"]
           },
           {
@@ -40,7 +39,7 @@ export default function Registration() {
             validation: ["passwordValidation"]
           },
           {
-            name: "confirm password",
+            name: "confirm_password",
             type: "text",
             validation: ["passwordValidation"]
           },

@@ -17,19 +17,7 @@ class Login extends React.Component {
 
   handleOnSubmit(state) {
 
-    // Temp User 
-    let person1 =
-    {
-      username: "iva",
-      password: "123"
-    };
-    console.log(state, 'hello2');
-
-    localStorage.setItem('person1', JSON.stringify(person1))
-
-    let givenPerson1 = JSON.parse(localStorage.getItem('person1'));
-
-    console.log(givenPerson1)
+    let givenPerson1 = JSON.parse(localStorage.getItem(state['username'].value));
 
     if (state['username'].value !== '' && state['password'].value !== '' && state['username'].value != undefined && state['password'].value != undefined) {
       if (givenPerson1['username'] === state['username'].value && givenPerson1['password'] === state['password'].value) {
@@ -75,7 +63,7 @@ class Login extends React.Component {
                 },
                 {
                   name: 'password',
-                  validations: ['require'],
+                  validations: ['require',],
                   style: {},
                   type: 'text',
                   placeholder: 'Enter Password'
