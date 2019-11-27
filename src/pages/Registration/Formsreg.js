@@ -67,7 +67,13 @@ class FormsReg extends React.Component {
           errorMessage: 'registered succesfully'
         })
 
-        this.props.history.push('/Main');
+        // Session start automatically (after registration)
+        localStorage.setItem('loggedIn', tempPerson.username);
+
+        setTimeout(() => { 
+          this.props.history.push('/Main');
+         }, 1000);
+        
         
       }
       // console.log(localStorage)

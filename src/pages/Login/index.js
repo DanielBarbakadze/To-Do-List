@@ -32,7 +32,11 @@ class Login extends React.Component {
     else{
       if (state['username'].value !== '' && state['password'].value !== '' && state['username'].value != undefined && state['password'].value != undefined) {
         if (givenPerson1['username'] === state['username'].value && givenPerson1['password'] === state['password'].value) {
-          this.props.history.push('/Main');
+
+        // Session start (after login)
+        localStorage.setItem('loggedIn', givenPerson1.username);
+
+        this.props.history.push('/Main');
         }
         else{
           this.setState({
@@ -42,6 +46,12 @@ class Login extends React.Component {
       }
     }
 
+  }
+
+  handleSession(){
+    if(localStorage.getItem('loggedIn')!=null){
+      this.props.history.push('/Main');
+    }
   }
 
   render() {
@@ -88,9 +98,11 @@ class Login extends React.Component {
               ]}
               onSubmit={(state) => this.handleOnSubmit(state)}
             />
+
+            {this.handleSession()}
+
             <p style={{color: 'red'}}>{this.state.errorMessage}</p>
             <p className="message">Not registered? <Link to="/Registration">Register Jigaro!</Link></p>
-
           </div>
         </div>
       </div>
