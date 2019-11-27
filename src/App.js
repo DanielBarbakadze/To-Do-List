@@ -33,6 +33,11 @@ function App() {
           </Route>
 
         </Switch>
+
+        <div className="back-img" >
+          <img src="/back.gif"/>
+        </div>
+
       </div>
     </Router>
   );

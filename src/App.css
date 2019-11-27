@@ -1,8 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 body {
-  background-image: url("/bg.jpg");
-  background-size: cover;
+  background-color: rgb(243, 243, 243);
 }
 
 .login-page {
@@ -97,4 +96,11 @@ input[type="date"]::-webkit-inner-spin-button{
   text-transform: uppercase;
   font-weight: bold;
   color: #154468;
+}
+
+.back-img {
+  position: relative;
+  top: -340px;
+  width: 5vh;
+  height: 5vh;
 }
