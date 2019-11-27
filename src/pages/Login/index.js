@@ -56,10 +56,14 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div className="login-page">
+      <div>
+        
         <div className="back-img" >
               <img src="../../../back.gif"/>
         </div>
+        
+      <div className="login-page">
+
         <div className="form">
 
           <div className="form-text">
@@ -103,13 +107,12 @@ class Login extends React.Component {
 
             {this.handleSession()}
 
-            <p style={{color: 'red'}}>{this.state.errorMessage}</p>
-            <p className="message">Not registered? <Link to="/Registration">Register Jigaro!</Link></p>
+            <p style={{color: 'red' , fontWeight: 'bold'}}>{this.state.errorMessage}</p>
+            <p className="message">Not registered? <Link to="/Registration"> Register Jigaro!</Link></p>
           </div>
         </div>
       </div>
-
-
+      </div>
     )
   }
 

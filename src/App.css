@@ -1,12 +1,13 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
-body {
+.mainWrapper {
   background-color: rgb(243, 243, 243);
+  height: 100vh;
+  overflow: hidden;
 }
-
 .login-page {
   width: 40%;
-  padding: 5% 0 0;
+  padding: 50px 0 0;
   margin: auto;
 }
 .form {
@@ -100,7 +101,7 @@ input[type="date"]::-webkit-inner-spin-button{
 
 .back-img {
   position: relative;
-  top: -340px;
+  top: 100px;
   width: 5vh;
   height: 5vh;
 }

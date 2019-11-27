@@ -5,6 +5,7 @@ import {withRouter} from "react-router";
 import {
   Link,
 } from "react-router-dom";
+
 let styles = {
   color: "purple",
   display: "inline",
@@ -207,7 +208,13 @@ class FormsReg extends React.Component {
   }
   render() {
     
-    return (
+    return (        
+      <div>
+
+        <div className="back-img" >
+              <img src="../../../back.gif"></img>
+        </div>
+
       <div className="login-page">
 
         <div className="form">
@@ -231,14 +238,11 @@ class FormsReg extends React.Component {
             </p>
             <button onClick={(e) => this.handleOnRegister(e) }> Register </button>
             <p className="message">
-              Registered? 
-              <Link to="/">
-                Login Jigaro!
-              </Link>
+              Registered? <Link to="/"> Login Jigaro!</Link>
             </p>
-            {/* {console.log(this.state.submitted)} */}
           </form>
         </div>
+      </div>
       </div>
     )
   }
