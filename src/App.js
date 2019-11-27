@@ -16,7 +16,10 @@ function App() {
         <Switch>
 
           <Route path="/Login">
-            <Login />
+            
+            <Login 
+            
+            />
           </Route>
 
           <Route path="/Registration">
@@ -34,9 +37,7 @@ function App() {
 
         </Switch>
 
-        <div className="back-img" >
-          <img src="/back.gif"/>
-        </div>
+
 
       </div>
     </Router>

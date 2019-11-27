@@ -57,7 +57,9 @@ class Login extends React.Component {
   render() {
     return (
       <div className="login-page">
-
+        <div className="back-img" >
+              <img src="../../../back.gif"/>
+        </div>
         <div className="form">
 
           <div className="form-text">
