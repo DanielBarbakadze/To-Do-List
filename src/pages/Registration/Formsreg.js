@@ -13,8 +13,15 @@ let styles = {
 
 class FormsReg extends React.Component {
   state = {
-    submitted: false
+    submitted: []
   }
+  stateUpdate(){
+    let newArray = [];
+    this.props.input.map((item) => newArray.push(item.name));
+    this.setState({submitted:newArray});
+    console.log(this.state);
+  }
+
   handleChange(e, vals) {
     let errors;
     if (e.target.name === "password") {
@@ -57,7 +64,9 @@ class FormsReg extends React.Component {
       this.setState({ [e.target.name + "check"]: errors });
     }
   }
+ 
   render() {
+    
     return (
         <div className="login-page">
 
@@ -66,7 +75,7 @@ class FormsReg extends React.Component {
           <div className="form-text">
           <label>Registration</label>
           </div>
-          <form className="login-form">
+          <div className="login-form">
         {this.props.input.map((item) =>
           <div>
             <InputReg
@@ -80,14 +89,13 @@ class FormsReg extends React.Component {
         <button > Register </button>
         <p className="message">Registered? <Link to="/">
         Login Jigaro!</Link></p>
-        {/* {console.log(this.state.submitted)} */}
-        </form>
+         
         </div>
+        </div>
+          
         </div>
     )
   }
 }
-
-
 
 export default FormsReg;
