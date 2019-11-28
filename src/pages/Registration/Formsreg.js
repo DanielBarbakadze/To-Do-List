@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import * as Validation from '../../lib/validations';
 import InputReg from './Inputreg';
-import {withRouter} from "react-router";
+import { withRouter } from "react-router";
 import {
   Link,
 } from "react-router-dom";
@@ -34,15 +34,14 @@ class FormsReg extends React.Component {
     errorMessage: ''
   }
 
-  handleOnRegister(e)
-  {
+  handleOnRegister(e) {
     e.preventDefault();
     // console.log(this.state.submitted);
 
-     
+
     let logIn = true;
-    Object.values(this.state.submitted).map(function(value){
-      if(value==false){
+    Object.values(this.state.submitted).map(function (value) {
+      if (value == false) {
         logIn = false;
       }
     })
@@ -50,16 +49,16 @@ class FormsReg extends React.Component {
 
     let checkUser = JSON.parse(localStorage.getItem(this.state.person.username));
 
-    if(logIn == true){
-      
-      if(checkUser != null){
-        if (checkUser.username.length>0){
+    if (logIn == true) {
+
+      if (checkUser != null) {
+        if (checkUser.username.length > 0) {
           this.setState({
             errorMessage: 'this username is taken'
           })
         }
       }
-      else{
+      else {
 
         let tempPerson = this.state.person;
         localStorage.setItem(tempPerson.username, JSON.stringify(tempPerson));
@@ -71,11 +70,11 @@ class FormsReg extends React.Component {
         // Session start automatically (after registration)
         localStorage.setItem('loggedIn', tempPerson.username);
 
-        setTimeout(() => { 
+        setTimeout(() => {
           this.props.history.push('/Main');
-         }, 1000);
-        
-        
+        }, 1000);
+
+
       }
       // console.log(localStorage)
     }
@@ -94,23 +93,23 @@ class FormsReg extends React.Component {
 
       if (this.state.newpassword !== undefined) {
         if (this.state.newpassword !== e.target.value) {
-           errors = "passwords don't match"; 
-          }
+          errors = "passwords don't match";
+        }
         else {
-          let tempState = {}; 
-            tempState = this.state.submitted;
+          let tempState = {};
+          tempState = this.state.submitted;
 
-            Object.keys(tempState).map(function(key){
-              if(key==['confirm_password']){
-                Object.entries(tempState[key]=true)
-              }
-            });
+          Object.keys(tempState).map(function (key) {
+            if (key == ['confirm_password']) {
+              Object.entries(tempState[key] = true)
+            }
+          });
           this.setState({
-             ["passwordcheck"]: "" 
-            });
+            ["passwordcheck"]: ""
+          });
           this.setState({
-             ["confirm_passwordcheck"]: "" 
-            });
+            ["confirm_passwordcheck"]: ""
+          });
           errors = "";
         }
       }
@@ -123,24 +122,24 @@ class FormsReg extends React.Component {
 
       if (e.target.value !== this.state.oldpassword) {
         errors = "passwords don't match";
-        let tempState = {}; 
+        let tempState = {};
         tempState = this.state.submitted;
 
-        Object.keys(tempState).map(function(key){
-          if(key==['confirm_password']){
-            Object.entries(tempState[key]=false)
+        Object.keys(tempState).map(function (key) {
+          if (key == ['confirm_password']) {
+            Object.entries(tempState[key] = false)
           }
         });
       }
       else {
-        let tempState = {}; 
-            tempState = this.state.submitted;
+        let tempState = {};
+        tempState = this.state.submitted;
 
-            Object.keys(tempState).map(function(key){
-              if(key==['confirm_password']){
-                Object.entries(tempState[key]=true)
-              }
-            });
+        Object.keys(tempState).map(function (key) {
+          if (key == ['confirm_password']) {
+            Object.entries(tempState[key] = true)
+          }
+        });
         this.setState({
           ["confirm_passwordcheck"]: ""
         });
@@ -156,12 +155,12 @@ class FormsReg extends React.Component {
         if (Validation[val]) {
           if (Validation[val](e.target.value) !== true) {
 
-            let tempState = {}; 
+            let tempState = {};
             tempState = this.state.submitted;
 
-            Object.keys(tempState).map(function(key){
-              if(key==[e.target.name]){
-                Object.entries(tempState[key]=false)
+            Object.keys(tempState).map(function (key) {
+              if (key == [e.target.name]) {
+                Object.entries(tempState[key] = false)
               }
             });
 
@@ -177,14 +176,14 @@ class FormsReg extends React.Component {
             });
           }
           else {
-            let tempState2 = {}; 
+            let tempState2 = {};
             tempState2 = this.state.submitted;
             let tempPerson = {};
             tempPerson = this.state.person;
-            Object.keys(tempState2).map(function(key){
-              if(key==[e.target.name]){
-                Object.entries(tempState2[key]=true);
-                Object.entries(tempPerson[key]=e.target.value);
+            Object.keys(tempState2).map(function (key) {
+              if (key == [e.target.name]) {
+                Object.entries(tempState2[key] = true);
+                Object.entries(tempPerson[key] = e.target.value);
               }
             });
 
@@ -207,42 +206,42 @@ class FormsReg extends React.Component {
     }
   }
   render() {
-    
-    return (        
-      <div>
+
+    return (
+      <div className="mainWrapper" >
 
         <div className="back-img" >
-              <img src="../../../back.gif"></img>
+          <img src="../../../back.gif"></img>
         </div>
 
-      <div className="login-page">
+        <div className="login-page">
 
-        <div className="form">
+          <div className="form">
 
-          <div className="form-text">
-            <label>Registration</label>
+            <div className="form-text">
+              <label>Registration</label>
+            </div>
+            <form className="login-form">
+              {this.props.input.map((item) =>
+                <div>
+                  <InputReg
+                    name={item.name}
+                    type={item.type}
+                    onChange={(e) => this.handleChange(e, item.validation)}
+                  />
+                  <div className="error-text">{this.state[item.name + "check"]}</div>
+                </div>
+              )}
+              <p className="error-text">
+                {this.state.errorMessage}
+              </p>
+              <button onClick={(e) => this.handleOnRegister(e)}> Register </button>
+              <p className="message">
+                Registered? <Link to="/"> Login Jigaro!</Link>
+              </p>
+            </form>
           </div>
-          <form className="login-form">
-            {this.props.input.map((item) =>
-              <div>
-                <InputReg
-                  name={item.name}
-                  type={item.type}
-                  onChange={(e) => this.handleChange(e, item.validation)}
-                />
-                <div className="error-text">{this.state[item.name + "check"]}</div>
-              </div>
-            )}
-            <p className="error-text">
-              {this.state.errorMessage}
-            </p>
-            <button onClick={(e) => this.handleOnRegister(e) }> Register </button>
-            <p className="message">
-              Registered? <Link to="/"> Login Jigaro!</Link>
-            </p>
-          </form>
         </div>
-      </div>
       </div>
     )
   }

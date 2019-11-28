@@ -11,7 +11,7 @@ import {
 function App() {
   return (
     <Router>
-      <div className="mainWrapper">
+      <div>
         
         <Switch>
 

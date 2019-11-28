@@ -24,94 +24,94 @@ class Login extends React.Component {
 
     let givenPerson1 = JSON.parse(localStorage.getItem(state['username'].value));
 
-    if(givenPerson1==null){
+    if (givenPerson1 == null) {
       this.setState({
         errorMessage: 'Invalid Username or Password'
-      })  
+      })
     }
-    else{
+    else {
       if (state['username'].value !== '' && state['password'].value !== '' && state['username'].value != undefined && state['password'].value != undefined) {
         if (givenPerson1['username'] === state['username'].value && givenPerson1['password'] === state['password'].value) {
 
-        // Session start (after login)
-        localStorage.setItem('loggedIn', givenPerson1.username);
+          // Session start (after login)
+          localStorage.setItem('loggedIn', givenPerson1.username);
 
-        this.props.history.push('/Main');
+          this.props.history.push('/Main');
         }
-        else{
+        else {
           this.setState({
             errorMessage: 'Invalid Username or Password'
-          })  
+          })
         }
       }
     }
 
   }
 
-  handleSession(){
-    if(localStorage.getItem('loggedIn')!=null){
+  handleSession() {
+    if (localStorage.getItem('loggedIn') != null) {
       this.props.history.push('/Main');
     }
   }
 
   render() {
     return (
-      <div>
-        
+      <div className="mainWrapper" >
+
         <div className="back-img" >
-              <img src="../../../back.gif"/>
+          <img src="../../../back.gif" />
         </div>
-        
-      <div className="login-page">
 
-        <div className="form">
+        <div className="login-page">
 
-          <div className="form-text">
-            <label>Authorization</label>
-          </div>
+          <div className="form">
 
-          <div className="login-form" >
+            <div className="form-text">
+              <label>Authorization</label>
+            </div>
 
-            <Form
-              inputs={[
-                {
-                  name: 'username',
-                  validations: ['require'],
-                  style: { color: 'red' },
-                  type: 'text',
-                  style: {
-                    'font-family': '"Roboto", sans-serif',
-                    'outline': '0',
-                    'background': '#dddddd',
-                    'width': '100%',
-                    'border': '0',
-                    'margin': '0 0 20px',
-                    'padding': '18px',
-                    'box-sizing': 'border-box',
-                    'font-size': '14px',
-                    'border-radius': '3px'
+            <div className="login-form" >
+
+              <Form
+                inputs={[
+                  {
+                    name: 'username',
+                    validations: ['require'],
+                    style: { color: 'red' },
+                    type: 'text',
+                    style: {
+                      'font-family': '"Roboto", sans-serif',
+                      'outline': '0',
+                      'background': '#dddddd',
+                      'width': '100%',
+                      'border': '0',
+                      'margin': '0 0 20px',
+                      'padding': '18px',
+                      'box-sizing': 'border-box',
+                      'font-size': '14px',
+                      'border-radius': '3px'
+                    },
+                    type: 'text',
+                    placeholder: 'Enter Username'
                   },
-                  type: 'text',
-                  placeholder: 'Enter Username'
-                },
-                {
-                  name: 'password',
-                  validations: ['require',],
-                  style: {},
-                  type: 'text',
-                  placeholder: 'Enter Password'
-                }
-              ]}
-              onSubmit={(state) => this.handleOnSubmit(state)}
-            />
+                  {
+                    name: 'password',
+                    validations: ['require',],
+                    style: {},
+                    type: 'text',
+                    placeholder: 'Enter Password'
+                  }
+                ]}
+                onSubmit={(state) => this.handleOnSubmit(state)}
+              />
 
-            {this.handleSession()}
+              {this.handleSession()}
 
-            <p style={{color: 'red' , fontWeight: 'bold'}}>{this.state.errorMessage}</p>
-            <p className="message">Not registered? <Link to="/Registration"> Register Jigaro!</Link></p>
+              <p style={{ color: 'red', fontWeight: 'bold' }}>{this.state.errorMessage}</p>
+              <p className="message">Not registered? <Link to="/Registration"> Register Jigaro!</Link></p>
+            </div>
           </div>
         </div>
-      </div>
       </div>
     )
   }

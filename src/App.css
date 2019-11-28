@@ -18,8 +18,8 @@
   margin: 0 auto 20px;
   padding: 23px 45px 30px 45px;
   text-align: center;
-  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 5px
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
 }
 .form input {
   font-family: "Roboto", sans-serif;
@@ -104,4 +104,5 @@ input[type="date"]::-webkit-inner-spin-button{
   top: 100px;
   width: 5vh;
   height: 5vh;
+  margin: 0px;
 }
