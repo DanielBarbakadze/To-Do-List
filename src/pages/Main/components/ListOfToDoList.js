@@ -1,15 +1,21 @@
 import React, {useState,useEffect}from 'react';
-const ListOfToDoList=()=>{
+import { stringify } from 'querystring';
+
+const ListOfToDoList = () => {
    
+    const [currentList,setCurrentList]=useState({
+        'currentList': []
+    })
+
     const [person,setPerson]=useState({
         'name':"sandro",
         'works': {
-            'vabaco3': ["misvla","wasvla","mosvla"],
-            'tsu1': ["gamocda"],
-            'vabaco2': ["misvla","wasvla","mosvla"],
-            'tsu2': ["gamocda"],
-            'vabaco1': ["misvla","wasvla","mosvla"],
-            'tsu3': ["gamocda"]
+            'List1': ["item1","item1","item1",],
+            'List2': ["item2","item2","item2",],
+            'List3': ["item3","item3","item3",],
+            'List4': ["item4","item4","item4",],
+            'List5': ["item5","item5","item5",],
+            'List6': ["item6","item6","item6",],
         }
     });
    
@@ -20,9 +26,26 @@ const ListOfToDoList=()=>{
         'id' : "",
         'previous': undefined
     });
+
+    useEffect(() => {
+        let temp = checked.listText.toString()
+        temp = temp.replace(' ','')
+        temp = temp.replace(' ','')
+        setCurrentList({
+            ...currentList,
+            currentList: person.works[temp]
+        })
+    }, [checked]);
+
     function handleCheck(event){
-        // console.log(checked.listText,event.target.textContent)
         if(checked.listText==event.target.textContent){
+
+            // don't delete please
+            // let temp = checked.listText.toString()
+            // temp = temp.replace(' ','')
+            // temp = temp.replace(' ','')
+            // console.log(person.works[temp])
+            //
             return;
         }
         else{
@@ -41,9 +64,11 @@ const ListOfToDoList=()=>{
         }
     }
     function handleDelete(){
-        console.log(checked)
         checked.previous.className=""
-        delete person["works"][checked.listText];
+        let temp = checked.listText.toString()
+            temp = temp.replace(' ','')
+            temp = temp.replace(' ','')
+        delete person["works"][temp];
         setChecked({...checked,key:undefined,listText:"",previous:undefined})
     }
     
@@ -51,8 +76,9 @@ const ListOfToDoList=()=>{
        
         <div>
             <div>
-            { Object.keys(person["works"]).map((elem,i)=> <li onClick={(e) => handleCheck(e)}  value={i}> {elem} </li>) }
-             <button onClick={() => handleDelete()}>Delete List</button>
+                {Object.keys(person["works"]).map((elem,i)=> <li onClick={(e) => handleCheck(e)}  value={i}> {elem} </li>) }
+                <button onClick={() => handleDelete()}>Delete List</button>
+                {currentList.currentList}
              </div>
         </div>
         
