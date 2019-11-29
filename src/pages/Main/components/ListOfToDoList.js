@@ -10,12 +10,12 @@ const ListOfToDoList = () => {
     const [person,setPerson]=useState({
         'name':"sandro",
         'works': {
-            'List1': ["item1","item1","item1",],
-            'List2': ["item2","item2","item2",],
-            'List3': ["item3","item3","item3",],
-            'List4': ["item4","item4","item4",],
-            'List5': ["item5","item5","item5",],
-            'List6': ["item6","item6","item6",],
+            'List1': ["item1-1","item1-2","item1-3",],
+            'List2': ["item2-1","item2-2","item2-3",],
+            'List3': ["item3-1","item3-2","item3-3",],
+            'List4': ["item4-1","item4-2","item4-3",],
+            'List5': ["item5-1","item5-2","item5-3",],
+            'List6': ["item6-1","item6-2","item6-3",],
         }
     });
    
@@ -78,8 +78,9 @@ const ListOfToDoList = () => {
             <div>
                 {Object.keys(person["works"]).map((elem,i)=> <li onClick={(e) => handleCheck(e)}  value={i}> {elem} </li>) }
                 <button onClick={() => handleDelete()}>Delete List</button>
-                {currentList.currentList}
              </div>
+             {Object.values(currentList).map((e) => <li>{e}</li>)}
+
         </div>
         
     );
