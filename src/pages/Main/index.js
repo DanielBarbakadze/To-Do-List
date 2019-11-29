@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from "react-router";
-
+import ListOfToDoList from "./components/ListOfToDoList";
 class Main extends React.Component {
   
   state = ({
@@ -33,6 +33,7 @@ class Main extends React.Component {
         {/* <button onClick={(e) => this.handleSession(e)}>click</button>   */}
         {this.handleSession()}
         <button onClick={() => this.handleEndSession()}>Log Out</button>
+        <ListOfToDoList/>
       </div>
     )
   }
