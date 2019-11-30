@@ -64,6 +64,9 @@ const ListOfToDoList = () => {
         }
     }
     function handleDelete(){
+        if (checked.key == undefined && checked.listText == "")
+        return;
+        else {
         checked.previous.className=""
         let temp = checked.listText.toString()
             temp = temp.replace(' ','')
@@ -71,6 +74,7 @@ const ListOfToDoList = () => {
         delete person["works"][temp];
         setChecked({...checked,key:undefined,listText:"",previous:undefined})
     }
+}
     
     return(
        
