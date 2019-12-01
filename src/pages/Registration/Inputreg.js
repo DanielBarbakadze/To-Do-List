@@ -13,7 +13,7 @@ import {
 
     }
     function changePlaceHolder(name){
-      if(name==="confirm password") return("Confirm password");
+      if(name==="confirm_password") return("Confirm password");
       else return("Enter " + name);
     }
     return(
