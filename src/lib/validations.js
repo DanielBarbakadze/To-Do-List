@@ -38,8 +38,8 @@ export function dateValidation(value) {
 }
 
 /* მინ 8 სიმბოლო, მინ ერთი ასო, მინ ერთი რიცხვი */
-export function passwordValidation(value) {
-    if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(value)) {
+export function passwordValidation(value){
+    if(!/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/.test(value)){
         return "easy pass to be guessed";
     }
     else return true;
