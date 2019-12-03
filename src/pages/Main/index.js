@@ -1,6 +1,8 @@
 import React from 'react';
 import { withRouter } from "react-router";
 import ListOfToDoList from "./components/ListOfToDoList";
+import Mainbar from "./components/Mainbar";
+import Navbar from "./components/Navbar";
 class Main extends React.Component {
   
   state = ({
@@ -33,7 +35,17 @@ class Main extends React.Component {
         {/* <button onClick={(e) => this.handleSession(e)}>click</button>   */}
         {this.handleSession()}
         <button onClick={() => this.handleEndSession()}>Log Out</button>
-        <ListOfToDoList/>
+        {/* <ListOfToDoList/> */}
+      <br/>
+      <div className="row">
+        <Navbar
+          currentList={this.state.currentList} 
+          selectItem={() => this.setState({})}
+        />
+        <Mainbar/>
+        
+      </div>
+        
       </div>
     )
   }

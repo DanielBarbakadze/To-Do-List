@@ -1,0 +1,11 @@
+.Mainbar {
+    top: 5%;
+    background: green;
+    width:60%;
+    /* min-height: 500px; */
+    display: inline-block;
+}
+.Workingbar {
+    padding-right: 20%;
+    padding-left: 5%;
+}

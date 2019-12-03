@@ -1,5 +1,23 @@
 .Navbar {
+    top:0;
     background: red;
-    width:30%;
-    min-height: 500px;
+    width:40%;
+    /* min-height: 500px; */
+    display: inline-block;
 }
+.list {
+    padding-left: 25%;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+/* .column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 30%;
+    flex: 1;
+  } */
