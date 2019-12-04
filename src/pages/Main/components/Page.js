@@ -9,8 +9,12 @@ class Page extends React.Component {
   }
   handleClick(){
     let array = this.state.projects;
-    array.push(this.state.inputState);
-    this.setState({projects:array});
+    if(this.state.inputState!=undefined && this.state.inputState!=''){
+      array.push(this.state.inputState);
+        this.setState({
+        projects : array
+      });
+    }
   }
   render(){
     return(
