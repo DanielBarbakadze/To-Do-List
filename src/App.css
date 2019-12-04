@@ -1,13 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
-body {
-  background-image: url("/bg.jpg");
-  background-size: cover;
+.mainWrapper {
+  background-color: rgb(243, 243, 243);
+  height: 100vh;
 }
-
 .login-page {
   width: 40%;
-  padding: 5% 0 0;
+  padding: 50px 0 0;
   margin: auto;
 }
 .form {
@@ -15,11 +14,12 @@ body {
   z-index: 1;
   background-color: rgba(255, 255, 255, 0.95);
   max-width: 400px;
+  min-width: 150px;
   margin: 0 auto 20px;
   padding: 23px 45px 30px 45px;
   text-align: center;
-  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 5px
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
 }
 .form input {
   font-family: "Roboto", sans-serif;
@@ -31,7 +31,7 @@ body {
   padding: 18px;
   box-sizing: border-box;
   font-size: 14px;
-  border-radius: 3px
+  border-radius: 3px;
 }
 .form button {
   font-family: "Roboto", sans-serif;
@@ -46,7 +46,7 @@ body {
   font-size: 14px;
   transition: all 0.3 ease;
   cursor: pointer;
-  border-radius: 3px
+  border-radius: 3px;
 }
 .form button:hover,.form button:focus {
   background: #0476ce;
@@ -97,4 +97,18 @@ input[type="date"]::-webkit-inner-spin-button{
   text-transform: uppercase;
   font-weight: bold;
   color: #154468;
+}
+
+.back-img {
+  position: relative;
+  top: 100px;
+  width: 5vh;
+  height: 5vh;
+  margin: 0px;
+}
+.listItem{
+  color:red;
+}
+.elements{
+  display: inline-block;
 }

@@ -16,7 +16,10 @@ function App() {
         <Switch>
 
           <Route path="/Login">
-            <Login />
+            
+            <Login 
+            
+            />
           </Route>
 
           <Route path="/Registration">
@@ -33,6 +36,9 @@ function App() {
           </Route>
 
         </Switch>
+
+
+
       </div>
     </Router>
   );

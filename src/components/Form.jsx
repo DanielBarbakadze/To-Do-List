@@ -25,7 +25,7 @@ export default class Form extends React.Component {
     }
 
     handleChange(e, errors) {
-        console.log(errors);
+        // console.log(errors);
         this.setState({
             [e.target.name]: {
                 value: e.target.value,
@@ -43,7 +43,7 @@ export default class Form extends React.Component {
     }
 
     render() {
-        console.log(this.state);
+        // console.log(this.state);
         return (
             <div>
                 {
