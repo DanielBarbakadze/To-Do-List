@@ -1,17 +1,10 @@
 import React from 'react';
 import Form from '../../components/Form';
-import Require from '../../lib/validations';
-import Main from '../Main';
-import Input from '../../components/Input';
 import { withRouter } from "react-router";
 
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
+  Link
 } from "react-router-dom";
-import { Redirect } from 'react-router';
 
 class Login extends React.Component {
 
