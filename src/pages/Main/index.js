@@ -3,6 +3,7 @@ import { withRouter } from "react-router";
 import ListOfToDoList from "./components/ListOfToDoList";
 import Mainbar from "./components/Mainbar";
 import Navbar from "./components/Navbar";
+import Page from "./components/Page";
 class Main extends React.Component {
   
   state = ({
@@ -42,7 +43,9 @@ class Main extends React.Component {
           currentList={this.state.currentList} 
           selectItem={() => this.setState({})}
         />
-        <Mainbar/>
+        <Mainbar
+        
+        />
         
       </div>
         
