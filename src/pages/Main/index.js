@@ -7,7 +7,9 @@ import Page from "./components/Page";
 class Main extends React.Component {
   
   state = ({
-    loggedIn: null
+    loggedIn: null,
+    Selected: 'nothing selected',
+    Projects: ['no projects selected']
   })
 
   handleSession(){
@@ -40,13 +42,13 @@ class Main extends React.Component {
       <br/>
       <div className="row">
         <Navbar
-          currentList={this.state.currentList} 
-          selectItem={() => this.setState({})}
+          changeIndexState = {(el,projects) => this.setState({Selected: el,Projects: projects})}
         />
         <Mainbar
-        
+          selected = {this.state.Selected}
+          projects = {this.state.Projects}
         />
-        
+        <button onClick={() => console.log('from index',this.state)}>console log magic</button>
       </div>
         
       </div>

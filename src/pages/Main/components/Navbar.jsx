@@ -1,13 +1,19 @@
 import React from 'react';
 import './Navbar.css';
 import Page from './Page';
-export default function Navbar() {
+export default class Navbar extends React.Component {
+
+  render(){
     return (
       <div className="Navbar">
         <div className="list"></div>
         <h1>Nav Bar</h1>
 
-        <Page />
+        <Page 
+          changeState = {(el,projects) => {this.props.changeIndexState(el,projects)}}
+        />
+
       </div>
     )
   }
+}

@@ -1,15 +1,31 @@
 import React from 'react';
-import ListOfToDoList from './ListOfToDoList'
 import './Mainbar.css';
-import Page from './Page';
-export default function Navbar() {
+import Main from './Main';
+export default class Mainbar extends React.Component {
+
+  render(){
     return (
       <div className="Mainbar column">
         <div className="Workingbar">
           <h1>Main Bar </h1>
-          <Page
-          />
+          {
+            this.props.projects.map((el) => {
+              if(this.props.selected===el){
+                return (
+                  <li>
+                    {el}
+                    <Main
+                      selected = {this.props.selected}
+                      projects = {this.props.projects}
+                    /> 
+                  </li>  
+                )
+              }
+            })
+          }
+          {/* {console.log('from mainbar',this.props.selected,this.props.projects)} */}
         </div>
       </div>
     )
   }
+}

@@ -14,24 +14,10 @@ function List(props){
         let tempList = props.list;
         tempList = tempList.map((el) => {
             if(el.id == props.id) {
-                if(el.style==undefined){
-                    el.style = {textDecoration : "line-through"};
+                if(el.style && el.style.textDecoration==="line-through"){
+                    el.style = {textDecoration : ""}
                 }
-                if(el.style.textDecoration==="line-through"){
-                    el.style = {textDecoration : "underline"}
-                }
-                if(el.style.textDecoration==="underline"){
-                    el.style = {textDecoration : "line-through"};
-                };
-                console.log(el.style)
-                // if(el.style["text-decoration"]==undefined && el.style["text-decoration"]==''){
-                //     el.style = {"text-decoration" : "line-through"};
-                // }
-                // else{
-                //     el.style = {"text-decoration" : "underline"};
-                // }
-                
-                // console.log(el,el.style);
+                else el.style = {textDecoration : "line-through"};
                 return el;
             }
             else {

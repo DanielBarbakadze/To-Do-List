@@ -35,6 +35,11 @@ class Main extends React.Component {
     return (
       <div>
 
+
+        <div>
+          {/* {this.props.projects} */}
+        </div>
+
         <div>
           <input name="lists" type="text" onChange={(e) => this.handleChange(e)} />
           <button onClick={() => this.handleClick()}>
@@ -54,6 +59,7 @@ class Main extends React.Component {
             handleLine={(e) => this.handleLine(e)}
           />
         )}
+
 
       </div>
 
