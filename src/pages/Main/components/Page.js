@@ -32,7 +32,6 @@ class Page extends React.Component {
           this.state.projects.map((el) =>
             <li onClick={() => this.handleSelect(el,this.state.projects)}>
               {el}
-              {/* <Main/>  */}
             </li>
           )
         }
