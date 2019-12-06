@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../../../../src/App.css';
 function List(props){
+
+    const [buttonName,setButtonName] = useState('Done')
+
     function handleClick(){
         let newList = props.list;
          newList = newList.map((el) => {
@@ -9,6 +12,18 @@ function List(props){
          newList = newList.filter((el) => el!=undefined);
        props.handleDelete(newList);
     }
+    useEffect(() => {
+        if(props.style!=undefined){
+            if(props.style.textDecoration==="line-through"){
+                setButtonName('Undo')
+            }
+            else{
+                setButtonName('Done')
+            }
+        }
+        },[handleLine]
+    );
+    
 
     function handleLine(){
         let tempList = props.list;
@@ -16,6 +31,8 @@ function List(props){
             if(el.id == props.id) {
                 if(el.style && el.style.textDecoration==="line-through"){
                     el.style = {textDecoration : ""}
+                    
+                    
                 }
                 else el.style = {textDecoration : "line-through"};
                 return el;
@@ -36,7 +53,7 @@ return(
             Delete
         </button>
         <button onClick = {() => handleLine() } >
-            Done 
+            {buttonName} 
         </button>
     </div>
 
