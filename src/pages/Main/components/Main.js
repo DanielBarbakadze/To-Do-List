@@ -15,18 +15,6 @@ class Main extends React.Component {
         lastItem = { id: this.state.list[this.state.list.length - 1].id + 1, value: this.state.inputState };
       }
       tempStateList.push(lastItem);
-      let selected = JSON.stringify(this.props.selected);
-      if(localStorage[selected]) { 
-       let stringedArr = JSON.parse(localStorage[selected]);
-       stringedArr.push(...tempStateList);
-       stringedArr = JSON.stringify(stringedArr);
-         localStorage.setItem(selected,stringedArr);
-      }
-      else{
-        let stringedArr;
-        stringedArr = JSON.stringify(tempStateList);
-        localStorage.setItem(selected,stringedArr);
-      }
       this.setState({ list: tempStateList })
     }
   }
@@ -34,17 +22,11 @@ class Main extends React.Component {
     this.setState({ inputState: e.target.value })
   }
   handleDelete(tempList) {
-    let stringedArr = JSON.stringify(tempList);
-      let selected = JSON.stringify(this.props.selected);
-      localStorage.setItem(selected,stringedArr);
     this.setState({
       list: tempList
     })
   }
   handleLine(tempList) {
-    let stringedArr = JSON.stringify(tempList);
-    let selected = JSON.stringify(this.props.selected);
-    localStorage.setItem(selected,stringedArr);
     this.setState({
       list: tempList
     })
@@ -55,6 +37,7 @@ class Main extends React.Component {
 
 
         <div>
+          {/* {this.props.projects} */}
         </div>
 
         <div>
