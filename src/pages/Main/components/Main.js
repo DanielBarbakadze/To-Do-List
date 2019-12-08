@@ -18,7 +18,7 @@ class Main extends React.Component {
       let selected = JSON.stringify(this.props.selected);
       if(localStorage[selected]) { 
        let stringedArr = JSON.parse(localStorage[selected]);
-       stringedArr.push(...tempStateList);
+       stringedArr.push(lastItem);
        stringedArr = JSON.stringify(stringedArr);
          localStorage.setItem(selected,stringedArr);
       }

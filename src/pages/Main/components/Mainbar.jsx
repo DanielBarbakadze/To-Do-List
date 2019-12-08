@@ -12,15 +12,7 @@ export default class Mainbar extends React.Component {
     if(localStorage[selected]) {list = JSON.parse(localStorage[selected]);}
     return(
       <div>
-        { list.map((item) => <div>
-        { <List
-           id={item.id}
-           value={item.value}
-           style={item.style}
-           list={list}
-         />}
-          </div>
-          ) }
+        {list.map((item) => <div>{item.value}</div>)}
       </div>
     )
   }

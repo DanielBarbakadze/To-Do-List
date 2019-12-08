@@ -38,7 +38,6 @@ class Main extends React.Component {
         {/* <button onClick={(e) => this.handleSession(e)}>click</button>   */}
         {this.handleSession()}
         <button onClick={() => this.handleEndSession()}>Log Out</button>
-        <ListOfToDoList/>
       <br/>
       <div className="row">
         <Navbar
