@@ -57,10 +57,14 @@ class Page extends React.Component {
   }
 
   ObjectToArray(obj) {
-    let result = Object.keys(obj).map(function (key) {
-      return [(key), obj[key]];
-    });
-    return result;
+    if(obj!=undefined){
+      let result = Object.keys(obj).map(function (key) {
+        return [(key), obj[key]];
+      });
+      return result;
+    }
+    else return []
+    
   }
 
   handleReturnArray(arr){

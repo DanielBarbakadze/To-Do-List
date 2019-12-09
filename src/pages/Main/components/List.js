@@ -46,7 +46,7 @@ function List(props){
     }
 return(
     <div>
-      
+        {/* {console.log(this.props.selected)} */}
         {<div style = {props.style} className="elements"> {props.value} </div>}
               
         <button onClick = {() => handleClick()} >
