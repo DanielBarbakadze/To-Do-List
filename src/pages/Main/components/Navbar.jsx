@@ -5,7 +5,8 @@ export default class Navbar extends React.Component {
   
   render(){
     { let username = localStorage.loggedIn + "projects";
-      const userProjects = Object.keys(JSON.parse(localStorage[username]));
+      let userProjects = [];
+      if(localStorage[username]!==undefined) userProjects = Object.keys(JSON.parse(localStorage[username]));
     return (
       <div className="Navbar">
         <div className="list"></div>

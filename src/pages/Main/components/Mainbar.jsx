@@ -6,11 +6,9 @@ export default class Mainbar extends React.Component {
     username : localStorage.loggedIn + "projects"
   }
   handleList(el,e){
+    let arr = {};
     let username = this.state.username;
-    let obj = {
-      [el] : e
-    }
-    let arr = JSON.parse(localStorage.getItem(username));
+   if(localStorage[username]!==undefined) arr = JSON.parse(localStorage.getItem(username));
     arr[el] = e;
     localStorage.setItem(username,JSON.stringify(arr));
     console.log(JSON.parse(localStorage[username]));
