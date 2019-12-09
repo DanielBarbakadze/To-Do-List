@@ -2,8 +2,7 @@ import React from 'react';
 import List from './List';
 class Main extends React.Component {
   state = {
-    list: [
-    ],
+    list: this.props.list,
     inputState: ""
   }
   handleClick() {
@@ -16,7 +15,9 @@ class Main extends React.Component {
       }
       tempStateList.push(lastItem);
       this.setState({ list: tempStateList })
-    }
+      this.props.handleList(tempStateList);
+     }
+   
   }
   handleChange(e) {
     this.setState({ inputState: e.target.value })
@@ -25,21 +26,17 @@ class Main extends React.Component {
     this.setState({
       list: tempList
     })
+    this.props.handleList(tempList);
   }
   handleLine(tempList) {
     this.setState({
       list: tempList
     })
+    this.props.handleList(tempList);
   }
   render() {
     return (
-      <div>
-
-
-        <div>
-          {/* {this.props.projects} */}
-        </div>
-
+      <div> 
         <div>
           <input name="lists" type="text" onChange={(e) => this.handleChange(e)} />
           <button onClick={() => this.handleClick()}>
