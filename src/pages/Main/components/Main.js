@@ -17,6 +17,7 @@ class Main extends React.Component {
       this.setState({ list: tempStateList })
       this.props.handleList(tempStateList);
      }
+     this.setState({inputState:""})
    
   }
   handleChange(e) {
@@ -38,10 +39,20 @@ class Main extends React.Component {
     return (
       <div> 
         <div>
-          <input name="lists" type="text" onChange={(e) => this.handleChange(e)} />
-          <button onClick={() => this.handleClick()}>
+          <input 
+          name="lists" type="text" 
+          onChange={(e) => this.handleChange(e)} 
+          value = {this.state.inputState}
+          onKeyPress={event => {
+            if (event.key === 'Enter') {
+              this.handleClick()
+            }
+          }}
+          />
+          <button onClick = {() => this.handleClick()}>
             Add another list
-       </button>
+            </button>
+     
 
 
         </div>
