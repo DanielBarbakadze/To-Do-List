@@ -11,11 +11,22 @@ class Page extends React.Component {
     this.setState({ inputState: e.target.value });
   }
   handleClick() {
-    let inputState = this.state.inputState;
     let projects = this.state.projects;
-    projects.push(inputState);
-    this.setState({ projects })
-    this.setState({ inputState: "" })
+    let inputState = this.state.inputState;
+    let tempChecker = false;
+
+    projects.map((el)=>{if(el==this.state.inputState)tempChecker=true})
+    if(tempChecker==false){
+      projects.push(inputState);
+      this.setState({ projects })
+      this.setState({ inputState: "" })
+    }
+    else{
+      this.setState({
+        existedErrorMessage: this.state.inputState + " Already Exists"
+      })
+    }
+    
   }
   handleSelect(selectedItem, projects) {
     this.props.changeState(selectedItem, projects);
