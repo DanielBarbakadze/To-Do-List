@@ -20,10 +20,11 @@ class Page extends React.Component {
       projects.push(inputState);
       this.setState({ projects })
       this.setState({ inputState: "" })
+      this.setState({existedErrorMessage:""})
     }
     else{
       this.setState({
-        existedErrorMessage: this.state.inputState + " Already Exists"
+        existedErrorMessage: this.state.inputState + " already exists"
       })
     }
     
