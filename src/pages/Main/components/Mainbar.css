@@ -1,10 +1,11 @@
 .Mainbar {
     top: 5%;
-    background: darkgray;
-    width:60%;
-    /* min-height: 500px; */
-    color:white;
+    background: #ffffff;
+    width: 50%;
+    padding-right: 10%;
+    color: black;
     display: inline-block;
+    box-shadow: inset -9em 0 #fafafa;
 }
 .Workingbar {
     padding-right: 20%;

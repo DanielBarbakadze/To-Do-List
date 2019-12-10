@@ -1,12 +1,15 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
+html, #root, #root > div, #root > div > div {
+  height: 100%;
+}
 body {
   font-family: "Roboto",  sans-serif;
   margin:0;
   padding:0;
   height: 100%;
   width: 100%;
-  background-color: rgb(243, 243, 243);
+  background-color: #fafafa;
 }
 
 .mainWrapper {
@@ -133,4 +136,30 @@ input[type="date"]::-webkit-inner-spin-button{
 }
 .elements{
   display: inline-block;
+}
+
+.Topbar{
+  background: #db4c3f;
+  font-size: 18px;
+  padding: 1%;
+  padding-left: 10%;
+  padding-right: 10%;
+  box-shadow: inset 0 -1px #ca2100;
+  color: white;
+}
+
+.settingOptions {
+  border: none;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background: transparent;
+}
+.settingOptions:hover{
+  border-bottom: 1px solid #fafafaef;
 }
