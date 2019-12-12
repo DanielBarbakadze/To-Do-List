@@ -1,5 +1,5 @@
 import React from 'react';
-import './Mainbar.css';
+import '../index.css';
 import Main from './Main';
 export default class Mainbar extends React.Component {
   state = {
@@ -15,8 +15,7 @@ export default class Mainbar extends React.Component {
   }
   render(){
     return (
-      <div className="Mainbar column">
-        <div className="Workingbar">
+        <div className="mainContent">
           <h1>Main Bar </h1>
           {
             this.props.projects.map((el) => {
@@ -45,7 +44,6 @@ export default class Mainbar extends React.Component {
             })
           }
         </div>
-      </div>
     )
   }
 }

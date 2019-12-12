@@ -65,10 +65,20 @@ class Main extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className="Topbar">
-          <span>Welcome Back, <strong>{this.state.loggedIn}</strong> !</span>
-          {/* <button onClick={(e) => this.handleSession(e)}>click</button>   */}
+      <div className="main-container">
+        <div className="header">
+        <nav class="hamb" role="navigation">
+                <div id="menuToggle">
+                    <input type="checkbox" />
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <ul id="menu">
+                                Side bar goes here
+                    </ul>
+                </div>
+            </nav>
+          <span className="welcome">Welcome Back, <strong>{this.state.loggedIn}</strong> !</span>
           {this.handleSession()}
           <div className="settingsBar">
             <button className="settingOptions" onClick={this.togglePopup.bind(this)}>Info</button>
@@ -85,16 +95,18 @@ class Main extends React.Component {
           }
         </div>
 
-        <div className="row">
           <Navbar
             changeIndexState={(el, projects) => this.setState({ Selected: el, Projects: projects })}
           />
+          <div className="main">
           <Mainbar
             selected={this.state.Selected}
             projects={this.state.Projects}
           />
+          </div>
+          
         </div>
-      </div>
+
     )
   }
 }

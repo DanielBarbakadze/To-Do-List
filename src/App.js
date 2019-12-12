@@ -1,7 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Popup from './components/Popup';
 import { Login, Registration, Main } from './pages'
 import {
   BrowserRouter as Router,
