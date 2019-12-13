@@ -1,33 +1,42 @@
 import React from 'react';
 import Main from './Main';
 import '../../../App.css';
+import '../index.css';
 class Page extends React.Component {
   state = {
     projects: this.props.localProjects,
-    existedErrorMessage: '',
+    errorMessage: '',
     inputState: ""
   }
   handleChange(e) {
     this.setState({ inputState: e.target.value });
+    if(this.state.errorMessage != ""){
+      this.setState({errorMessage:""})
+    }
   }
   handleClick() {
     let projects = this.state.projects;
     let inputState = this.state.inputState;
     let tempChecker = false;
-
-    projects.map((el) => { if (el == this.state.inputState) tempChecker = true })
+    if(this.state.inputState == "") {
+      this.setState({
+        errorMessage: "Please input something"
+      })
+    }
+    else{
+    projects.map((el) => { if (el == this.state.inputState ) tempChecker = true })
     if (tempChecker == false) {
       projects.push(inputState);
       this.setState({ projects })
       this.setState({ inputState: "" })
-      this.setState({existedErrorMessage:""})
+      this.setState({errorMessage:""})
     }
     else {
       this.setState({
-        existedErrorMessage: this.state.inputState + " already exists"
+        errorMessage: this.state.inputState + " already exists"
       })
     }
-
+    }
   }
   handleSelect(selectedItem, projects) {
     this.props.changeState(selectedItem, projects);
@@ -48,8 +57,8 @@ class Page extends React.Component {
   render() {
 
     return (
-      <div>
-        <input className="empty"
+      <div className="NavbarContent">
+        <input className="projinput"
           type="text"
           onChange={(e) => this.handleChange(e)}
           value={this.state.inputState}
@@ -59,11 +68,14 @@ class Page extends React.Component {
             }
           }}
         />
-        <button onClick={() => this.handleClick()} >
-          Create project
+        <span className="createbtnspan" onClick={() => this.handleClick()}>
+        <button className="createbtn"  >
+          + 
         </button>
+        Add Project
+        </span>
         <span>
-          <div className="error-text2">{this.state.existedErrorMessage}</div>
+          <div className="error-text2">{this.state.errorMessage}</div>
         </span>
         {
           this.state.projects.map((el) => {

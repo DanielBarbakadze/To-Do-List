@@ -70,13 +70,14 @@ class FormsReg extends React.Component {
         // Session start automatically (after registration)
         localStorage.setItem('loggedIn', tempPerson.username);
 
-        setTimeout(() => {
+       
           this.props.history.push('/Main');
-        }, 1000);
+
+         
+        
 
 
       }
-      // console.log(localStorage)
     }
 
 
@@ -140,7 +141,7 @@ class FormsReg extends React.Component {
             Object.entries(tempState[key] = true)
           }
         });
-        this.setState({
+               this.setState({
           ["confirm_passwordcheck"]: ""
         });
         this.setState({
@@ -163,7 +164,6 @@ class FormsReg extends React.Component {
                 Object.entries(tempState[key] = false)
               }
             });
-
             this.setState({
               submitted: tempState
             });
