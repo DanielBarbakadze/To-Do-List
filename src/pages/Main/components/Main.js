@@ -37,29 +37,7 @@ class Main extends React.Component {
   }
   render() {
     return (
-      <div> 
-        <div className="MainbarTop">
-          <input 
-            className="projinput"
-            name="lists" type="text" 
-            onChange={(e) => this.handleChange(e)} 
-            value = {this.state.inputState}
-            onKeyPress={event => {
-              if (event.key === 'Enter') {
-                this.handleClick()
-              }
-            }}
-          />
-          
-          <span className="createbtnspan" onClick = {() => this.handleClick()}>
-            <button className="createbtn">+</button>
-            Add another list
-          </span>
-     
-
-
-        </div>
-
+      <div>      
           {this.state.list.map((item) =>
             <List
               id={item.id}
@@ -70,9 +48,26 @@ class Main extends React.Component {
               handleLine={(e) => this.handleLine(e)}
             />
           )}
+         <div className="MainbarTop">
+         <input 
+           className="projinput"
+           name="lists" type="text" 
+           onChange={(e) => this.handleChange(e)} 
+           value = {this.state.inputState}
+           onKeyPress={event => {
+             if (event.key === 'Enter') {
+               this.handleClick()
+             }
+           }}
+         />
+         
+         <span className="createbtnspan" onClick = {() => this.handleClick()}>
+           <button className="createbtn">+</button>
+           Add another list
+         </span>
 
-      </div>
-
+       </div>
+       </div>
     )
   }
 
