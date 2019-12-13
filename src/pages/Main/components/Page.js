@@ -58,6 +58,23 @@ class Page extends React.Component {
 
     return (
       <div className="NavbarContent">
+         <input className="projinput"
+          type="text"
+          onChange={(e) => this.handleChange(e)}
+          value={this.state.inputState}
+          onKeyPress={event => {
+            if (event.key === 'Enter') {
+              this.handleClick()
+            }
+          }}
+        />
+        <span className="createbtnspan" onClick={() => this.handleClick()}>
+          <button className="createbtn">+</button>
+          Add Project
+        </span>
+        <span>
+          <div className="error-text2">{this.state.errorMessage}</div>
+        </span>
         {
           this.state.projects.map((el) => {
             if (el != undefined) {
@@ -77,23 +94,7 @@ class Page extends React.Component {
               }
               )
             }
-             <input className="projinput"
-          type="text"
-          onChange={(e) => this.handleChange(e)}
-          value={this.state.inputState}
-          onKeyPress={event => {
-            if (event.key === 'Enter') {
-              this.handleClick()
-            }
-          }}
-        />
-        <span className="createbtnspan" onClick={() => this.handleClick()}>
-          <button className="createbtn">+</button>
-          Add Project
-        </span>
-        <span>
-          <div className="error-text2">{this.state.errorMessage}</div>
-        </span>
+            
       </div>
               )
             }

@@ -37,17 +37,7 @@ class Main extends React.Component {
   }
   render() {
     return (
-      <div>      
-          {this.state.list.map((item) =>
-            <List
-              id={item.id}
-              value={item.value}
-              style={item.style}
-              list={this.state.list}
-              handleDelete={(e) => this.handleDelete(e)}
-              handleLine={(e) => this.handleLine(e)}
-            />
-          )}
+      <div>  
          <div className="MainbarTop">
          <input 
            className="projinput"
@@ -66,7 +56,18 @@ class Main extends React.Component {
            Add another list
          </span>
 
-       </div>
+       </div>    
+          {this.state.list.map((item) =>
+            <List
+              id={item.id}
+              value={item.value}
+              style={item.style}
+              list={this.state.list}
+              handleDelete={(e) => this.handleDelete(e)}
+              handleLine={(e) => this.handleLine(e)}
+            />
+          )}
+        
        </div>
     )
   }
