@@ -50,6 +50,7 @@ export default class Form extends React.Component {
                     this.props.inputs.map((input) => {
                         return (
                             <Input 
+                                type = {input.type}
                                 name={input.name}
                                 value={this.state[input.name] && this.state[input.name].value}
                                 style={input.style}

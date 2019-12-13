@@ -33,7 +33,7 @@ class Input extends React.Component {
             name,
             value,
             style,
-            type='text',
+            type,
             errors,
             placeholder
         } = this.props;

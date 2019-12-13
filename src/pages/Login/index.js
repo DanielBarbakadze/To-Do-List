@@ -91,7 +91,7 @@ class Login extends React.Component {
                     name: 'password',
                     validations: ['require',],
                     style: {},
-                    type: 'text',
+                    type: 'password',
                     placeholder: 'Enter Password'
                   }
                 ]}
