@@ -69,9 +69,7 @@ class Page extends React.Component {
           }}
         />
         <span className="createbtnspan" onClick={() => this.handleClick()}>
-          <button className="createbtn"  >
-            +
-        </button>
+          <button className="createbtn">+</button>
           Add Project
         </span>
         <span>

@@ -38,36 +38,38 @@ class Main extends React.Component {
   render() {
     return (
       <div> 
-        <div>
+        <div className="MainbarTop">
           <input 
-          name="lists" type="text" 
-          onChange={(e) => this.handleChange(e)} 
-          value = {this.state.inputState}
-          onKeyPress={event => {
-            if (event.key === 'Enter') {
-              this.handleClick()
-            }
-          }}
+            className="projinput"
+            name="lists" type="text" 
+            onChange={(e) => this.handleChange(e)} 
+            value = {this.state.inputState}
+            onKeyPress={event => {
+              if (event.key === 'Enter') {
+                this.handleClick()
+              }
+            }}
           />
-          <button onClick = {() => this.handleClick()}>
+          
+          <span className="createbtnspan" onClick = {() => this.handleClick()}>
+            <button className="createbtn">+</button>
             Add another list
-            </button>
+          </span>
      
 
 
         </div>
 
-        {this.state.list.map((item) =>
-          <List
-            id={item.id}
-            value={item.value}
-            style={item.style}
-            list={this.state.list}
-            handleDelete={(e) => this.handleDelete(e)}
-            handleLine={(e) => this.handleLine(e)}
-          />
-        )}
-
+          {this.state.list.map((item) =>
+            <List
+              id={item.id}
+              value={item.value}
+              style={item.style}
+              list={this.state.list}
+              handleDelete={(e) => this.handleDelete(e)}
+              handleLine={(e) => this.handleLine(e)}
+            />
+          )}
 
       </div>
 

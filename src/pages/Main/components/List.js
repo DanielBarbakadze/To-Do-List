@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../../../../src/App.css';
 function List(props){
 
-    const [buttonName,setButtonName] = useState('Done')
+    const [buttonName,setButtonName] = useState('✓')
 
     function handleClick(){
         let newList = props.list;
@@ -15,10 +15,10 @@ function List(props){
     useEffect(() => {
         if(props.style!=undefined){
             if(props.style.textDecoration==="line-through"){
-                setButtonName('Undo')
+                setButtonName('⟲')
             }
             else{
-                setButtonName('Done')
+                setButtonName('✓')
             }
         }
         },[handleLine]
@@ -45,15 +45,23 @@ function List(props){
         // console.log(tempList);
     }
 return(
-    <div>
+    <div className="MainbarListItem">
         {<div style = {props.style} className="listElements"> {props.value} </div>}
-              
-        <button onClick = {() => handleClick()} >
-            Delete
-        </button>
-        <button onClick = {() => handleLine() } >
-            {buttonName} 
-        </button>
+
+        <div className="btnSection">
+
+            <span className="createbtnspan"  onClick = {() => handleClick()}>
+                <button className="createbtn btnExtra redbtn">✗</button>
+            </span>
+
+            <span className="createbtnspan"  onClick = {() => handleLine()}>
+                <button className="createbtn btnExtra greenbtn">
+                    {buttonName} 
+                </button>
+            </span>
+            
+        </div>
+        
     </div>
 
 )
