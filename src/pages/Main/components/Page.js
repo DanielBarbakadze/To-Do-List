@@ -1,6 +1,7 @@
 import React from 'react';
 import Main from './Main';
 import '../../../App.css';
+import '../index.css';
 class Page extends React.Component {
   state = {
     projects: this.props.localProjects,
@@ -48,8 +49,8 @@ class Page extends React.Component {
   render() {
 
     return (
-      <div>
-        <input className="empty"
+      <div className="NavbarContent">
+        <input className="projinput"
           type="text"
           onChange={(e) => this.handleChange(e)}
           value={this.state.inputState}
@@ -59,9 +60,12 @@ class Page extends React.Component {
             }
           }}
         />
-        <button onClick={() => this.handleClick()} >
-          Create project
+        <span className="createbtnspan" onClick={() => this.handleClick()}>
+        <button className="createbtn"  >
+          + 
         </button>
+        Add Project
+        </span>
         <span>
           <div className="error-text2">{this.state.existedErrorMessage}</div>
         </span>

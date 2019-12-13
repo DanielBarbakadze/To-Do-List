@@ -195,3 +195,39 @@
     cursor: pointer;
     background: transparent;
   } 
+
+
+  /* Navbar styles */
+
+  .createbtn {
+    position: relative;
+    top: 5px;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    border: none;
+    background: none;
+    color: #0984e3;
+    font-size: 30px;
+    cursor: pointer;
+    padding-left: 5px;
+  }
+
+  .createbtnspan {
+      cursor: pointer;
+      color: gray;
+  }
+
+  .projinput {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #b6b6b6;
+    border: 0;
+    padding: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+    border-radius: 3px;
+  }
+
+  .NavbarContent {
+      padding: 10px;
+  }
