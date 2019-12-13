@@ -235,6 +235,9 @@
         border-bottom: 1px solid #d6d6d6;
     }
 
+    .elements:hover {
+        background:rgba(255, 255, 255, 0.15);
+    }
     .NavbarList{
         display: inline-block;
         padding: 4%;
