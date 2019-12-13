@@ -8,7 +8,15 @@ import Page from "./components/Page";
 import '../../App.css'
 import './index.css'
 class Main extends React.Component {
-
+  state = {
+    loading : "loading...",
+    done:"notloading"
+  }
+  componentWillMount() {
+          setTimeout(() => {
+            this.setState({ done: true });
+          }, 1000);
+  }
   state = ({
     loggedIn: null,
     Selected: 'nothing selected',
@@ -16,10 +24,6 @@ class Main extends React.Component {
     tempPopup: []
   })
 
-  // constructor(props) {
-  //   super(props);
-  //   this.state = { showPopup: false };
-  // }
 
   togglePopup() {
     this.handlegetUserInfo();
@@ -64,8 +68,9 @@ class Main extends React.Component {
 
 
   render() {
+    if(this.state.done){
     return (
-      <div>
+          <div>
         <div className="Topbar">
           <span>Welcome Back, <strong>{this.state.loggedIn}</strong> !</span>
           {/* <button onClick={(e) => this.handleSession(e)}>click</button>   */}
@@ -93,9 +98,16 @@ class Main extends React.Component {
             selected={this.state.Selected}
             projects={this.state.Projects}
           />
+            </div>
         </div>
-      </div>
     )
+  }
+  else{
+    return(<div>
+      loading
+      </div>)
+  } 
+      
   }
 }
 
