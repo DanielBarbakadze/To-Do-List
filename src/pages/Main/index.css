@@ -82,6 +82,9 @@
         position: relative;
         top: 0px;
     }   
+    .settingOptions:hover {
+        border-bottom: 1px solid #d6d6d6;
+    }
     .welcome {
         display: none;
     } 
@@ -197,7 +200,9 @@
     cursor: pointer;
     background: transparent;
   } 
-
+  .settingOptions:hover{
+    border-bottom: 1px solid #d6d6d6;
+  }
 
   /* Navbar styles */
 

@@ -7,19 +7,27 @@ class Popup extends React.Component {
         return (
             <div className='popup'>
                 <div className='popup_inner'>
-                    <strong>{this.props.text}</strong>
-                    <button className="button_close" onClick={this.props.closePopup}>X</button>
-                    {
-                        this.props.infoArray.map((e) => 
+                    <div className='popup_contains'>
+                        <strong className="popup_title">{this.props.text}</strong>
+                        <button className="button_close" onClick={this.props.closePopup}>X</button>
                         {
-                            if(e!=undefined){
-                                return(
-                                    <li>
-                                        <strong>{e[0]}</strong>: {e[1]}</li>
-                                    )
-                            }
-                        })
-                    }
+                            this.props.infoArray.map((e) => 
+                            {
+                                if(e!=undefined){
+                                    return(
+                                        <tr className="infoItem">
+                                            <td className="infoDef">
+                                                <strong>{e[0].charAt(0).toUpperCase() + e[0].slice(1)}: </strong>
+                                            </td>
+                                            <td className="infoDesc">
+                                                {e[1]}
+                                            </td>
+                                        </tr>
+                                        )
+                                }
+                            })
+                        }
+                    </div>
                 </div>
             </div>
         );
