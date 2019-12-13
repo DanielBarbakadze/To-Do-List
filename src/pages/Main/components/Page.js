@@ -10,32 +10,32 @@ class Page extends React.Component {
   }
   handleChange(e) {
     this.setState({ inputState: e.target.value });
-    if(this.state.errorMessage != ""){
-      this.setState({errorMessage:""})
+    if (this.state.errorMessage != "") {
+      this.setState({ errorMessage: "" })
     }
   }
   handleClick() {
     let projects = this.state.projects;
     let inputState = this.state.inputState;
     let tempChecker = false;
-    if(this.state.inputState == "") {
+    if (this.state.inputState == "") {
       this.setState({
         errorMessage: "Please input something"
       })
     }
-    else{
-    projects.map((el) => { if (el == this.state.inputState ) tempChecker = true })
-    if (tempChecker == false) {
-      projects.push(inputState);
-      this.setState({ projects })
-      this.setState({ inputState: "" })
-      this.setState({errorMessage:""})
-    }
     else {
-      this.setState({
-        errorMessage: this.state.inputState + " already exists"
-      })
-    }
+      projects.map((el) => { if (el == this.state.inputState) tempChecker = true })
+      if (tempChecker == false) {
+        projects.push(inputState);
+        this.setState({ projects })
+        this.setState({ inputState: "" })
+        this.setState({ errorMessage: "" })
+      }
+      else {
+        this.setState({
+          errorMessage: this.state.inputState + " already exists"
+        })
+      }
     }
   }
   handleSelect(selectedItem, projects) {
@@ -69,10 +69,10 @@ class Page extends React.Component {
           }}
         />
         <span className="createbtnspan" onClick={() => this.handleClick()}>
-        <button className="createbtn"  >
-          + 
+          <button className="createbtn"  >
+            +
         </button>
-        Add Project
+          Add Project
         </span>
         <span>
           <div className="error-text2">{this.state.errorMessage}</div>
@@ -82,22 +82,24 @@ class Page extends React.Component {
             if (el != undefined) {
               return (
                 <div className="elements">
-                  <li onClick={() => this.handleSelect(el, this.state.projects)}>
+                  <li className="NavbarList" onClick={() => this.handleSelect(el, this.state.projects)}>
                     {el}
                   </li>
-                  <button onClick={() => this.handleDelete(el)}>
-                    Delete project
-                  </button>
+                  <span className="createbtnspan hidden" onClick={() => this.handleDelete(el)}>
+                      <button className="createbtn redbtn">-</button>
+                      Delete Project
+                  </span>
+
                 </div>
+                  )
+                }
+              }
               )
             }
-          }
-          )
-        }
       </div>
-    )
-  }
+              )
+            }
 
-}
+          }
 
 export default Page;

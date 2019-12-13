@@ -211,11 +211,37 @@
     cursor: pointer;
     padding-left: 5px;
   }
-
-  .createbtnspan {
-      cursor: pointer;
-      color: gray;
+  .redbtn {
+      color:red;
   }
+
+    .createbtnspan {
+        cursor: pointer;
+        color: gray;
+    }
+
+    .elements {
+        border-bottom: 1px solid #d6d6d6;
+    }
+
+    .NavbarList{
+        display: inline-block;
+        padding: 4%;
+        cursor: pointer;
+    }
+
+    .NavbarList:hover + .createbtnspan {
+        display: inline-block;
+    }
+
+    .hidden{
+        display: none;
+    }
+    .hidden:hover{
+        display: inline-block;
+    }
+    
+
 
   .projinput {
     font-family: "Roboto", sans-serif;

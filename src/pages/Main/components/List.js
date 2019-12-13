@@ -46,7 +46,7 @@ function List(props){
     }
 return(
     <div>
-        {<div style = {props.style} className="elements"> {props.value} </div>}
+        {<div style = {props.style} className="listElements"> {props.value} </div>}
               
         <button onClick = {() => handleClick()} >
             Delete
