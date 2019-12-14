@@ -84,7 +84,7 @@ class Page extends React.Component {
                     {el}
                   </li>
                   <span className="createbtnspan hidden" onClick={() => this.handleDelete(el)}>
-                      <button className="createbtn redbtn">-</button>
+                      <button className="createbtn redbtn">−</button>
                       Delete Project
                   </span>
 

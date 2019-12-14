@@ -40,7 +40,7 @@ class Main extends React.Component {
       <div>  
          <div className="MainbarTop">
          <input 
-           className="projinput"
+           className="todoinput"
            name="lists" type="text" 
            onChange={(e) => this.handleChange(e)} 
            value = {this.state.inputState}
@@ -52,8 +52,8 @@ class Main extends React.Component {
          />
          
          <span className="createbtnspan" onClick = {() => this.handleClick()}>
-           <button className="createbtn">+</button>
-           Add another list
+           <button className="createbtn" id="todoadd">+</button>
+           Add ToDo
          </span>
 
        </div>    

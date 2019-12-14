@@ -16,7 +16,7 @@ export default class Mainbar extends React.Component {
   render(){
     return (
         <div className="mainContent">
-          <h1>Main Bar </h1>
+          <h2>ToDos</h2>
           {
             this.props.projects.map((el) => {
               if(this.props.selected===el){
@@ -27,8 +27,7 @@ export default class Mainbar extends React.Component {
                 }
                 return (
                   <div>
-                  <li>
-                    {el}
+                    <div className="projname">{el}</div>
                     {
                     <Main
                       list = {list}
@@ -37,7 +36,6 @@ export default class Mainbar extends React.Component {
                       handleList = {(e) => this.handleList(el,e)}
                     /> 
               }
-                  </li>  
                    </div>
                 )
               }

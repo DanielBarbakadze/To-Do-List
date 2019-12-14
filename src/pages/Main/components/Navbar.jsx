@@ -11,7 +11,7 @@ export default class Navbar extends React.Component {
       <div className="aside">
         { 
         <div className="asideContent">
-          <h1>Nav Bar</h1>
+          <h2>Projects</h2>
             
         <Page 
           changeState = {(el,projects) => {this.props.changeIndexState(el,projects)}}
