@@ -37,7 +37,8 @@ class Main extends React.Component {
   }
   render() {
     return (
-      <div>  
+      <div> 
+        <div className="buttoninside"> 
          <div className="MainbarTop">
          <input 
            className="todoinput"
@@ -53,9 +54,8 @@ class Main extends React.Component {
          
          <span className="createbtnspan" onClick = {() => this.handleClick()}>
            <button className="createbtn" id="todoadd">+</button>
-           Add ToDo
          </span>
-
+         </div>
        </div>    
           {this.state.list.map((item) =>
             <List
