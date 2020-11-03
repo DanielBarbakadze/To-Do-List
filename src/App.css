@@ -1,22 +1,141 @@
-.App {
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+@import url(https://xsound.ge/themes/venus/fonts.css);
+
+body {
+  font-family: "FiraGOr",  sans-serif;
+  margin:0;
+  padding:0;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(243, 243, 243);
+  overflow: hidden;
+}
+
+.mainWrapper {
+  background-color: rgb(243, 243, 243);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.login-page {
+  width: 40%;
+  padding: 50px 0 0;
+  margin: auto;
+}
+.form {
+  position: relative;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.95);
+  max-width: 400px;
+  min-width: 150px;
+  margin: 0 auto 20px;
+  padding: 23px 45px 30px 45px;
   text-align: center;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #dddddd;
+  width: 100%;
+  border: 0;
+  margin: 0 0 20px;
+  padding: 18px;
+  box-sizing: border-box;
+  font-size: 14px;
+  border-radius: 3px;
+}
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #0984e3;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  margin: auto;
+  color: #FFFFFF;
+  font-size: 14px;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.form button:hover,.form button:focus {
+  background: #0476ce;
 }
 
-.App-logo {
-  height: 40vmin;
+.form button:active {
+  background: #1084dd;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 0.95em;
+  font-weight: bold;
+}
+.form .message a {
+  color: #0476ce;
+  font-size: 1em;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
-.App-link {
-  color: #09d3ac;
+.form-text {
+  font-size: 1.8em;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  padding-bottom: 20px;
+}
+
+.error-text {
+  font-family: "Roboto", sans-serif;
+  color: red;
+  text-align: left;
+  font-size: 13px;
+  font-weight: bold;
+  position: relative;
+  top: -16px;
+}
+
+.error-text2 {
+  font-family: "Roboto", sans-serif;
+  color: red;
+  text-align: left;
+  font-size: 13px;
+  font-weight: bold;
+  top: -16px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="date"]::-webkit-inner-spin-button{
+    display: none;
+    -webkit-appearance: none;
+}
+
+.date {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #154468;
+}
+
+.back-img {
+  position: relative;
+  top: 100px;
+  width: 5vh;
+  height: 5vh;
+  margin: 0px;
+}
+
+.loading-img {
+  position: relative;
+  top: 180px;
+  left:37%;
+  width: 5vh;
+  height: 5vh;
+  margin: 0px;
 }
